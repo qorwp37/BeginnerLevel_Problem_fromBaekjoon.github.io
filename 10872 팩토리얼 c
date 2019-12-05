@@ -1,0 +1,18 @@
+//c언어
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+
+int main()
+{
+	int num;
+	scanf("%d", &num);
+	int fac=1;
+
+	for (int i = num; i > 1 ; i--)
+	{
+		fac *= i;
+	}
+
+	printf("%d",fac);
+	return 0;
+}
