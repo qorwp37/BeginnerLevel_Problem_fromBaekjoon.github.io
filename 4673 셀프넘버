@@ -1,0 +1,54 @@
+//c언어
+#include <stdio.h>
+#include <stdlib.h>
+int d(int *a)
+{
+	int result;
+	double num = *a;
+	double quotient = num / 10;
+
+	if (quotient < 1)
+	{
+		result = num + num;
+		return result;
+	}
+	else if (quotient < 10)
+	{
+		result = num + ((num - ((int)num % 10)) / 10) + (int)num % 10;
+		return result;
+	}
+	else if (quotient < 100)
+	{
+		result = num + ((num - ((int)num % 100)) / 100) + ((((int)num % 100) - ((int)num % 10)) / 10) + ((int)num % 10);
+		return result;
+	}
+	else if (quotient < 1000)
+	{
+		result = num + ((num - ((int)num % 1000)) / 1000) + ((int)num % 1000 - ((int)num % 100)) / 100 + ((((int)num % 100) - ((int)num % 10)) / 10) + ((int)num % 10);
+		return result;
+	}
+	else return 0;
+
+}
+int main()
+{
+	int* Ptr = NULL;
+	int* arrPtr[9999] = { 0 };
+	for (int i = 0; i < 9999; i++)
+	{
+		Ptr = &i;
+		arrPtr[i] = d(Ptr);
+	}
+
+	for (int i = 0; i < 9999; i++)
+	{
+		for (int j = 0; j < 9999; j++)
+		{
+			if (i == arrPtr[j])
+				break;
+			if (j == 9998)
+				printf("%d\n", i);
+		}
+	}
+	return 0;
+}
