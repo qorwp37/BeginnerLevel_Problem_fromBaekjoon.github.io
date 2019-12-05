@@ -1,0 +1,16 @@
+//c++
+#include <iostream>
+int main()
+{
+	using namespace std;
+	int num;
+	int value(0);
+	cin >> num;
+	
+	for (int i = 1; i <= num; i++)
+	{
+		value += i;
+	}
+	cout << value << endl;
+	return 0;
+}
