@@ -1,0 +1,30 @@
+//c언어
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int main()
+{
+	int a, b;
+	scanf("%d %d", &a, &b);
+	printf("%d", a + b);
+	return 0;
+}
+//c++언어
+#include <iostream>
+int main()
+{
+	using namespace std;
+
+	int a, b;
+
+	cin >> a;
+	cin >> b;
+	
+	cout << a + b << endl;
+	
+	return 0;
+}
+//python
+a, b = input().split()
+a = int(a)
+b = int(b)
+print(a+b)
