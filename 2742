@@ -1,0 +1,16 @@
+//c++
+#include <iostream>
+int main()
+{
+	using namespace std;
+
+	int num_iter;
+	cin >> num_iter;
+
+	for (int i = num_iter; i > 0; i--)
+	{
+		cout << i << "\n";
+	}
+
+	return 0;
+}
