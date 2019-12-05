@@ -1,1 +1,2 @@
-# MySoftware
+백준사이트에서 푼 문제들입니다. 먼저 풀어보고 비교하면서 참고하면 좋겠습니다.
+https://www.acmicpc.net/
