@@ -1,0 +1,32 @@
+//c++
+#include <iostream>
+
+int main()
+{
+	using namespace std;
+
+	int weight, num_three, num_five, num_rest;
+
+	cin >> weight;
+
+	num_five = weight / 5;
+	num_rest = weight % 5;
+
+	if (num_rest)
+	{
+		for (int i = num_five; i >= 0; i--)
+		{
+			num_rest = weight - (i * 5);
+			if(num_rest % 3 == 0)
+			{
+				num_three = num_rest / 3;
+				cout << i + num_three << endl;
+				return 0;
+			}
+		}
+		cout << "-1" << endl;
+	}
+	else
+		cout << num_five << endl;
+	return 0;
+}
