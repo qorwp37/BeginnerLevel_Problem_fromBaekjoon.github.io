@@ -1,0 +1,53 @@
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int main()
+{
+	int num;
+	scanf("%d", &num);
+	int arr[4] = { 0 };
+	int arr2[4] = { 0 };
+	int numfix=num;
+	for (int i = 0; i < 4; i++)
+	{
+		arr[3-i] = num % 10;
+		if (num < 10) break;
+		num /= 10;
+	}
+
+	int size;
+	if (arr[0] == 0 && arr[1] == 0 && arr[2] == 0) size = 1;
+	else if (arr[0] == 0 && arr[1] == 0) size = 2;
+	else if (arr[0] == 0) size = 3;
+	else size = 4;
+
+	int count = 0;
+	switch (size)
+	{
+	case 1:
+		printf("%d", arr[3]); 
+		break;
+	case 2:
+		printf("%d%d", arr[2], arr[3]);
+		break;
+	case 3:
+		for (int i = 100; i <= numfix; i++)
+		{
+			int arr2[4] = { 0 };
+			int k = i;
+			for (int j = 0; j < 4; j++)
+			{
+				arr2[3 - j] = k % 10;
+				if (k < 10) break;
+				k /= 10;
+			}
+			if ((arr2[1] - arr2[2]) == (arr2[2] - arr2[3])) count++;
+			
+		}
+		printf("%d\n", 99 + count);
+		break;
+	case 4 :
+		printf("%d\n", 144);
+		break;
+	}
+	return 0;
+}
